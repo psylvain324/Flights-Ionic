@@ -14,22 +14,22 @@ export class AppComponent implements OnInit {
   public appPages = [
     {
       title: 'Explore',
-      url: '/folder/Explore',
+      url: '/home/Explore',
       icon: 'planet'
     },
     {
       title: 'Flights',
-      url: '/folder/Flights',
+      url: '/home/Flights',
       icon: 'cloud'
     },
     {
       title: 'Hotels',
-      url: '/folder/Hotels',
+      url: '/home/Hotels',
       icon: 'home'
     },
     {
       title: 'Profile',
-      url: '/folder/Profile',
+      url: '/home/Profile',
       icon: 'person'
     }
   ];
@@ -50,7 +50,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    const path = window.location.pathname.split('folder/')[1];
+    const path = window.location.pathname.split('home/')[1];
     if (path !== undefined) {
       this.selectedIndex = this.appPages.findIndex(page => page.title.toLowerCase() === path.toLowerCase());
     }

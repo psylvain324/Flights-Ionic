@@ -1,20 +1,24 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-
+import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
+import { HotelsPage } from './hotels.page';
 
-import { FolderPageRoutingModule } from './folder-routing.module';
-
-import { FolderPage } from './folder.page';
+const routes: Routes = [
+  {
+    path: '',
+    component: HotelsPage
+  }
+];
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    FolderPageRoutingModule
+    RouterModule.forChild(routes)
   ],
-  declarations: [FolderPage]
+  declarations: [HotelsPage]
 })
-export class FolderPageModule {}
+export class HotelsModule {}
