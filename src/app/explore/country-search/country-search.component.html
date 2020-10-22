@@ -1,0 +1,15 @@
+<h5>Content with Filters</h5>
+<p-dropdown [options]="countries" [(ngModel)]="selectedCountry" optionLabel="name" [filter]="true" [showClear]="true" placeholder="Select a Country">
+    <ng-template pTemplate="selectedItem">
+        <div class="country-item country-item-value"  *ngIf="selectedCountry">
+            <img src={{selectedCountry.url}} />
+            <div>{{selectedCountry.name}}</div>
+        </div>
+    </ng-template>
+    <ng-template let-country pTemplate="item">
+        <div class="country-item">
+            <img src={{country.value.name}} />
+            <div>{{country.value.name}}</div>
+        </div>
+    </ng-template>
+</p-dropdown>

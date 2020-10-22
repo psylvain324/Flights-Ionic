@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { CountrySearchComponent } from './country-search.page';
+import { CountrySearchComponent } from './country-search.component';
 
 describe('CountrySearchComponent', () => {
   let component: CountrySearchComponent;

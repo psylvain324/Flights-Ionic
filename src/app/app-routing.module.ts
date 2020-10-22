@@ -21,7 +21,7 @@ const routes: Routes = [
       {
         path: ':countryName',
         loadChildren:
-          './explore/country-search/recipe-detail.module#RecipeDetailPageModule'
+          './explore/country-search/country-search.module#CountrySearchModule'
       }
     ]
   }

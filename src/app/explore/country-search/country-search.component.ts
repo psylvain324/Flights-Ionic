@@ -5,30 +5,18 @@ import { Country, CountryResponse } from '../models/country-response.model';
 
 @Component({
   selector: 'app-country-search',
-  templateUrl: './country-search.page.html',
-  styleUrls: ['./country-search.page.scss'],
+  templateUrl: './country-search.component.html',
+  styleUrls: ['./country-search.component.scss']
 })
 export class CountrySearchComponent implements OnInit {
   @ViewChild(IonInfiniteScroll) infiniteScroll: IonInfiniteScroll;
+  selectedCountry: Country;
   countries: Country[] = [];
 
   constructor(private service: CountryService) {}
 
-  ngOnInit() {}
-
-  loadData(event) {
-    setTimeout(() => {
-      console.log('Done');
-      event.target.complete();
-
-      if (this.countries.length === 1000) {
-        event.target.disabled = true;
-      }
-    }, 500);
-  }
-
-  toggleInfiniteScroll() {
-    this.infiniteScroll.disabled = !this.infiniteScroll.disabled;
+  ngOnInit() {
+    this.getCountries();
   }
 
   getCountries() {

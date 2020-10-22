@@ -6,6 +6,20 @@ const routes: Routes = [
   {
     path: '',
     component: HomePage
+  },
+  {
+    path: 'explore',
+    children: [
+      {
+        path: '',
+        loadChildren: './explore/explore.module#ExploreModule'
+      },
+      {
+        path: ':countryCode',
+        loadChildren:
+          './explore/country-search/country-search.module#CountrySearchModule'
+      }
+    ]
   }
 ];
 
